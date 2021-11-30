@@ -1,0 +1,253 @@
+:root{
+    --dirtWhite: #eeeeee;
+    --fontGreen: #A6CA2D;
+    --primaryColor:#124050;
+    --secondaryColor: rgba(18, 64, 80, 0.5);
+    --white : #ffffff;
+    --black : #0a0a0a;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+*{
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+    background-color: var(--white);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.active{
+    text-decoration: underline;
+}
+
+.side-navbar{
+    background-color: var(--primaryColor);
+}
+
+.back-button a{
+    color: var(--white);
+}
+
+.back-button, .navbar-button .navbar-open{ 
+    background-color: var(--primaryColor);
+    color: var(--white);
+    border: none;
+    transition: 0.3s;
+}
+
+.back-button:hover, .navbar-button .navbar-open:hover{
+    color: var(--black);
+}
+
+input[type=text]{
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 0 10px 0;
+    box-shadow: rgba(18, 64, 80, 0.12) 0px 1px 3px, rgba(16, 64, 80, 0.24) 0px 1px 2px;
+}
+
+.button-toggle{
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--white);
+}
+   
+.list-items{
+    list-style-image: url('../icons/square.png');
+    color: var(--dirtWhite);
+}
+
+.list-instruction{
+    list-style-image: url('../icons/round.png');
+}
+
+.open-instruction{
+    cursor: pointer;
+}
+
+.title-instruction{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-top{
+    width: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-top-left{
+    display: inline;
+}
+
+.navbar-top-right{
+    display: inline;
+}
+
+.watermark{
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    z-index: 999;
+}
+
+@media screen and (min-width: 720px) {
+    .side-navbar{
+        padding-top: 10px;
+        width: 300px;
+        height: 100vh;
+        display: inline-block;
+        position: absolute;
+        z-index: 999;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        overflow-y: auto;
+    }
+
+    .open-instruction, .button-toggle{
+        transition: 0.3s;
+    }
+
+    .open-instruction:hover, .button-toggle:hover{
+        transform: translateX(5px);
+    }
+
+    .navbar-button{
+        display: none;
+    }
+
+    .application{
+        color: var(--fontGreen);
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        margin:20px 0 20px;
+        text-shadow: 1px 1px var(--white);
+    }
+
+    .child-list-items{
+        font-weight: 100;
+        display: none;
+    }
+
+    .navbar-top{
+        margin-top: 20px;
+    }
+
+    .navbar-top-left{
+        width: 70%;
+    }
+
+    .navbar-top-left form{
+        display: inline;
+    }
+
+    .navbar-top-left form input[type=text]{
+        width: 70%;
+    }
+    
+    main{
+        position: relative;
+        margin-left: 300px;
+        padding: 10px;
+        display: inline-block;
+    }
+
+    .back-button{
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    main{
+        margin-top: 50px;
+    }
+
+    .navbar-body{
+        display: none;
+    }
+
+    .navbar-button{
+        font-size: 3vh;
+        color: var(--white);
+        left: 2vh;
+        top: 1vh;
+        position: absolute;
+        z-index: 1000;
+    }
+    
+    .navbar-open{
+        border: none;
+        border-radius: 5px;
+    }
+
+    .navbar-top{
+        padding: 1vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-top-left form{
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-top-right{
+        position: absolute;
+        top: 1vh;
+        right: 3vh;
+    }
+
+    .application{
+        color: var(--fontGreen);
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        text-shadow: 1px 1px var(--white);
+    }
+
+    .list-items{
+        margin:0 auto;
+        max-height: 35vh;
+        overflow-y: auto;
+    }
+
+    .child-list-items{
+        display: none;
+    }
+
+    .back-button{
+        font-size: 3vh;
+        right: 3vh;
+        border-radius: 5px;
+    }
+}
