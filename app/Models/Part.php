@@ -18,6 +18,6 @@ class Part extends Model
     }
 
     public function subPart(){
-        return $this->hasMany(SubPart::class, 'part_id');
+        return $this->hasMany(SubPart::class, 'part_id', 'id');
     }
 }

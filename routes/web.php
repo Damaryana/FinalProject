@@ -21,9 +21,10 @@ Route::get('/admin/sub-part/{id}', 'AdminController@indexSubPart');
 Route::post('/admin/sub-part', 'AdminController@storeSubPart');
 Route::get('/admin/item/{id}', 'AdminController@indexItem');
 Route::post('/admin/item', 'AdminController@storeItem');
-Route::post('/admin/sub-part/show', 'BookController@index');
 
 //website
 Route::get('/', 'WebsiteController@index');
 Route::get('/manual/{id}', 'BookController@show');
 Route::get('/list-manual', 'WebsiteController@show');
+Route::post('/sub-part/show', 'BookController@index');
+Route::post('/search/part', 'BookController@searchPart');

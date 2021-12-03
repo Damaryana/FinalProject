@@ -22,11 +22,22 @@
 </head>
 <body>
     <nav class="side-navbar">
-        <div class="navbar-button mb-3">
-            <button class="navbar-open" data-list="navbar" onclick="expandDiv(this)"><i class="fas fa-stream"></i></button>
+        <div class="navbar-button mb-3">      
+            <div id="button-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
+
         <div class="navbar-body" id="navbar">
-            <div class="application">{{ $part->name }}</div>
+
+            <div class="application">
+                <button class="back-button"><a href="/"><i class="fas fa-arrow-left"></i></a></button>
+                <img src="{{ asset('web-images/buana.png') }}">
+                <span>{{ $part->name }}</span>
+            </div>
+
             <ul class="list-items">
                 @forelse($part->part as $sb => $p)
                 <li>
@@ -43,6 +54,7 @@
                 @empty
                 @endforelse
             </ul> 
+
         </div>
     </nav>
 
@@ -50,12 +62,20 @@
 
         <div class="navbar-top mb-3">
             <div class="navbar-top-left">
-                <form action="">
-                    <input type="text" class="w-100" placeholder="Cari Instruksi">
+
+                <form autocomplete="off">
+                    <input type="text" id="search" class="w-100" placeholder="Cari Instruksi">
                 </form>
-            </div>
-            <div  class="navbar-top-right">
-                <button class="back-button"><a href="/"><i class="fas fa-arrow-left"></i></a></button>
+
+                <div id="search-result">
+                    <!-- <a href="">
+                         <div>
+                            <span>title part 1</span>
+                            <span>item part 1</span>
+                        </div>
+                    </a> -->
+                </div>
+                
             </div>
         </div>
 

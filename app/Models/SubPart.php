@@ -14,11 +14,11 @@ class SubPart extends Model
     protected $fillable = ['name', 'part_id'];
 
     public function subPart(){
-        return $this->belongsTo(Part::class);
+        return $this->belongsTo(Part::class, 'part_id', 'id');
     }
 
     public function item(){
-        return $this->hasMany(Item::class, 'sub_part_id');
+        return $this->hasMany(Item::class,'sub_part_id');
     }
 
 }

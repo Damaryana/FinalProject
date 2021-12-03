@@ -84,6 +84,22 @@ html, body{
     font-size: 1.5em;
 }
 
+footer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+footer div{
+    width: 50%;
+    height: 30px;
+    background-color: var(--primaryColor);
+    border-top-left-radius: 50px ;
+    border-top-right-radius: 50px;
+    color: var(--white);
+    font-style: italic;
+}
+
 @media screen and (min-width:720px){
     
     .header-background{
@@ -115,6 +131,10 @@ html, body{
 
     main{
         margin: 2em 15em;
+    }
+
+    footer div{
+        font-size: 1em;
     }
 
 }
@@ -197,6 +217,8 @@ html, body{
 
     #navbar-body{
         display: none;
+        height: 13vh;
+        overflow: auto;
         background-color: var(--primaryColor);
         width: 100%;
         margin-bottom: -2em;
@@ -213,4 +235,9 @@ html, body{
         margin: 3em 1em;
     }
 
+    footer div{
+        font-size: 0.7em;
+        padding-top: 10px;
+        width: 100%;
+    }
 }
