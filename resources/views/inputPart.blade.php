@@ -3,12 +3,6 @@
 @section('content')
 <span class="title-page">Modul({{ $part->name }})</span>
 
-@if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div>
-@endif
-
 <form action="/admin/part" method="post" class="mb-3 mt-3">
     @csrf
     <input type="hidden" value="{{$part->id}}" name="app_id">
@@ -30,12 +24,23 @@
       <th scope="row">{{ $p->id }}  </th>
       <td><a href="/admin/sub-part/{{ $p->id }}">{{ $p->name }}</a></td>
       <td>
-          <a href="" class="btn-success btn-sm">
-              <i class="fas fa-edit"></i>
-          </a>&nbsp
-          <a href="" class="btn-danger btn-sm">
-            <i class="fas fa-trash-alt"></i>
-          </a>
+        <button class="btn-success btn-sm">
+          <i class="fas fa-edit"></i>
+        </button>&nbsp
+
+        <button class="btn-danger btn-sm delete-button">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+
+        <div class="trash">
+          <form action="/delete/sub-part/{{ $p->id }}" method="post">
+            @method('delete')
+            @csrf
+            <label for="">Apakah anda yakin akan menghapus ini?</label>
+            <button type="submit" class="btn-sm btn-danger">Hapus</button>
+            <button type="button" class="btn-sm btn-primary cancel">Batal</button>
+          </form>
+        </div>
       </td>
     </tr>
     @empty

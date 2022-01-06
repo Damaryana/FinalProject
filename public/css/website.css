@@ -73,6 +73,7 @@ html, body{
     font-weight: bold;
     margin: 0 1.5em;
     text-decoration: none;
+    text-align: center;
 }
 
 .navbar-items:hover{
@@ -82,6 +83,10 @@ html, body{
 .page-title{
     font-weight: bold;
     font-size: 1.5em;
+}
+
+main{
+    margin: 10vh 0;
 }
 
 footer{

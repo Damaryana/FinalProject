@@ -21,4 +21,12 @@ class SubPart extends Model
         return $this->hasMany(Item::class,'sub_part_id');
     }
 
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($subPart) { 
+             $subPart->item()->each(function($item) {
+                $item->delete();
+             });
+        });
+    }
 }

@@ -64,7 +64,7 @@ input[type=text]{
 
 .watermark{
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     right: 20px;
     z-index: 999;
 }
@@ -77,6 +77,10 @@ input[type=text]{
 .text-area{
     border: 1px solid var(--primaryColor);
     border-radius: 5px;
+}
+
+.edit{
+    display: none;
 }
 
 @media screen and (min-width: 720px){

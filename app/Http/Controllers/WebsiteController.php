@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\App;
+use App\Models\Team;
 
 class WebsiteController extends Controller
 {
@@ -22,19 +23,30 @@ class WebsiteController extends Controller
         //
     }
 
-    public function show()
+    public function listManual()
     {
         $app = App::select('name', 'id')->orderBy('name')->get();
 
-        return view('listManual', compact('app'));
+        return response()->json([
+            'html' => view('website.listManual', compact('app'))->render()
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function aboutManual()
+    {
+        return response()->json([
+            'html' => view('website.aboutManual')->render()
+        ]);
+    }
+
+    public function teamManual(){
+        $team = Team::all();
+
+        return response()->json([
+            'html' => view('website.teamManual', compact('team'))->render()
+        ]);
+    }
+
     public function edit($id)
     {
         //

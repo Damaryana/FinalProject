@@ -152,11 +152,10 @@ input[type=text]{
 
 .watermark{
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     right: 20px;
     z-index: 999;
 }
-
 
 @media screen and (min-width: 720px) {
     .side-navbar{
@@ -185,8 +184,8 @@ input[type=text]{
     .application{
         color: var(--fontGreen);
         font-weight: bold;
-        font-size: 40px;
-        text-align: center;
+        font-size: 30px;
+        /* text-align: center; */
         margin:20px 0 20px;
         text-shadow: 1px 1px var(--white);
     }

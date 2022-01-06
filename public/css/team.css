@@ -1,0 +1,58 @@
+.page-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bio img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bio{
+    font-size: 1.2em;
+    animation: 1s ease-in 0s 1 slideTop;
+}
+
+.name{
+    font-weight: bold;
+}
+
+@keyframes slideTop {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .bio{
+        margin: 5vh 5vh;
+        width: 30vh;
+        height: fit-content;
+    }
+
+    .bio img{
+        width: 30vh;
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .bio{
+        margin: 3vh 2vh;
+        width: 10vh;
+        height: fit-content;
+    }
+
+    .bio img{
+        width: 10vh;
+        height: 10vh;
+    }
+    
+}

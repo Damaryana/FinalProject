@@ -114,8 +114,31 @@ class AdminController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroyApp($id)
     {
-        //
+        $app = App::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
+    }
+
+    public function destroyPart($id)
+    {
+        $app = Part::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
+    }
+
+    public function destroySubPart($id)
+    {
+        $app = SubPart::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
+    }
+
+    public function destroyItem($id)
+    {
+        $app = Item::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
     }
 }

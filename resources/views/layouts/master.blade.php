@@ -52,6 +52,7 @@
                     </ul>
                 </li>
                 @empty
+                <div class="text-center">Data Kosong</div>
                 @endforelse
             </ul> 
 

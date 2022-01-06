@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buana Manual Book</title>
+    <meta name="description" content="manual-book">
+    <meta name="googlebot" content="noindex">
+    <title>Manual Book</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -29,8 +31,8 @@
         <div class="navbar-top">
             <img src="{{ asset('web-images/buana.png') }}" class="logo" alt="logo-buana" >
             <div class="top-navbar-body">
-                <a href="https://buanalintas.co.id" class="top-navbar-items">Website Buana</a>
-                <a href="" class="top-navbar-items">Produk Buana</a>
+                <a href="h#" class="top-navbar-items">Website Kami</a>
+                <a href="" class="top-navbar-items">Produk Kami</a>
             </div>
         </div>
 
@@ -50,21 +52,18 @@
         </div>
         
         <div id="navbar-body">
-            <a class="navbar-items" href=""> Tentang Buku Manual </a>
-            <a class="navbar-items" href="/list-manual"> Daftar Buku Manual </a>
-            <a class="navbar-items" href=""> Buana Tips and Tricks </a>
+            <button class="navbar-items" data-link="about-manual"> Tentang Buku Manual </button>
+            <button class="navbar-items" data-link="list-manual"> Daftar Buku Manual </button>
+            <button class="navbar-items" data-link="team-manual"> Team </button>
         </div>
     </nav>
 
 </header>
 
-<main>
-    @yield('content')
-</main>
-
+<main></main>
 
 <footer>
-     <div class="text-center">Copyright @ 2021 All Rights Reserved, Powered by Buana Lintas Media</div> 
+     <div class="text-center">Copyright @ 2021 All Rights Reserved, Powered by Kelompok Kami</div> 
 </footer>
 
 {{-- Bootstrap --}}

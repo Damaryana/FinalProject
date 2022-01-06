@@ -1,0 +1,16 @@
+.trash{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 50vh;
+    height: 20vh;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 2px 5px #000;
+}
+
+.trash label{
+    color: #000;
+    display: block;
+}
