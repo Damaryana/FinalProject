@@ -12,25 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//admin
-Route::get('/admin', 'AdminController@indexApp');
-Route::post('/admin', 'AdminController@storeApp');
-Route::get('/admin/part/{id}','AdminController@indexPart');
-Route::post('/admin/part', 'AdminController@storePart');
-Route::get('/admin/sub-part/{id}', 'AdminController@indexSubPart');
-Route::post('/admin/sub-part', 'AdminController@storeSubPart');
-Route::get('/admin/item/{id}', 'AdminController@indexItem');
-Route::post('/admin/item', 'AdminController@storeItem');
-Route::delete('/delete/app/{id}', 'AdminController@destroyApp');
-Route::delete('/delete/part/{id}', 'AdminController@destroyPart');
-Route::delete('/delete/sub-part/{id}', 'AdminController@destroySubPart');
-Route::delete('/delete/item/{id}', 'AdminController@destroyItem');
-
-//team
-Route::get('/team', 'TeamController@index');
-Route::post('/team', 'TeamController@store');
-Route::delete('/team/delete/{id}', 'TeamController@destroy');
-Route::post('/team/update/{id}', 'TeamController@update');
 
 //website
 Route::get('/', 'WebsiteController@index');
@@ -41,3 +22,31 @@ Route::get('/team-manual', 'WebsiteController@teamManual');
 Route::post('/sub-part/show', 'BookController@index');
 Route::post('/search/part', 'BookController@searchPart');
 
+Route::middleware(['auth:sanctum'])->group(function () {
+    //admin
+    Route::get('/admin', 'AdminController@indexApp');
+    Route::post('/admin', 'AdminController@storeApp');
+    Route::get('/admin/part/{id}','AdminController@indexPart');
+    Route::post('/admin/part', 'AdminController@storePart');
+    Route::get('/admin/sub-part/{id}', 'AdminController@indexSubPart');
+    Route::post('/admin/sub-part', 'AdminController@storeSubPart');
+    Route::get('/admin/item/{id}', 'AdminController@indexItem');
+    Route::post('/admin/item', 'AdminController@storeItem');
+    Route::delete('/delete/app/{id}', 'AdminController@destroyApp');
+    Route::delete('/delete/part/{id}', 'AdminController@destroyPart');
+    Route::delete('/delete/sub-part/{id}', 'AdminController@destroySubPart');
+    Route::delete('/delete/item/{id}', 'AdminController@destroyItem');
+
+    //team
+    Route::get('/team', 'TeamController@index');
+    Route::post('/team', 'TeamController@store');
+    Route::delete('/team/delete/{id}', 'TeamController@destroy');
+    Route::post('/team/update/{id}', 'TeamController@update');
+
+    //website description
+    Route::get('/website-description', 'WebsiteController@createWebsite');
+    Route::post('/upload-logo', 'WebsiteController@storeLogo');
+    Route::post('/upload-about', 'WebsiteController@storeAbout');
+    
+    Route::post('/logout', 'AdminController@logout');
+});

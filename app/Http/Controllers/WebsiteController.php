@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 use App\Models\App;
 use App\Models\Team;
+use App\Models\Logo;
 
 class WebsiteController extends Controller
 {
@@ -34,8 +36,11 @@ class WebsiteController extends Controller
 
     public function aboutManual()
     {
+        $about = About::select('about_us')->latest('created_at')->first();
+        $logo = Logo::select('logo')->latest('created_at')->first();
+
         return response()->json([
-            'html' => view('website.aboutManual')->render()
+            'html' => view('website.aboutManual', compact('about', 'logo'))->render()
         ]);
     }
 
@@ -45,6 +50,38 @@ class WebsiteController extends Controller
         return response()->json([
             'html' => view('website.teamManual', compact('team'))->render()
         ]);
+    }
+
+    public function createWebsite(Request $request){
+        return view('admin.website');
+    }
+
+    public function storeAbout(Request $request)
+    {
+        $validated = $request->validate([
+            'about' => 'required|string'
+        ]);
+
+        $about = About::create([
+            'about_us' => $request->about,
+        ]);
+
+        return redirect()->back()->with('success', 'Data Berhasil Ditambahkan');
+    }
+
+    public function storeLogo(Request $request){
+        $validated = $request->validate([
+            'logo' => 'required|image|mimes:png,jpg,jpeg'
+        ]);
+
+        $logoName = time().$request->logo->getClientOriginalName();
+        $request->logo->move(public_path('web-images'), $logoName);
+
+        $logo = Logo::create([
+            'logo' => $logoName,
+        ]);
+
+        return redirect()->back()->with('success', 'Data Berhasil Ditambahkan');
     }
 
     public function edit($id)

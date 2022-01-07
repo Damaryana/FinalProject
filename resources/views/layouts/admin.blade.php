@@ -24,9 +24,12 @@
 <div id="side-navbar">
     <div class="items-navbar">
         <button class="button-navbar"><a href="/admin">Aplikasi</a></button>
-        <button class="button-navbar"><a href="">Website</a></button>
+        <button class="button-navbar"><a href="/website-description">Website</a></button>
         <button class="button-navbar"><a href="/team">Administrator</a></button>
-        <button class="button-navbar"><a href="">Keluar</a></button>
+        <form action="/logout" method="post">
+            @csrf
+            <button class="button-navbar"><a href="">Keluar</a></button>
+        </form>
     </div>
 </div>
 

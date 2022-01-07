@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\App;
 use App\Models\Part;
 use App\Models\SubPart;
@@ -140,5 +141,16 @@ class AdminController extends Controller
         $app = Item::find($id)->delete();
 
         return redirect()->back()->with('success', 'Data Berhasil Dihapus!');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
