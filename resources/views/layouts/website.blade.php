@@ -53,8 +53,8 @@
         
         <div id="navbar-body">
             <button class="navbar-items" data-link="about-manual"> Tentang Buku Manual </button>
-            <button class="navbar-items" data-link="list-manual"> Daftar Buku Manual </button>
             <button class="navbar-items" data-link="team-manual"> Team </button>
+            <button class="navbar-items" data-link="list-manual"> Daftar Buku Manual </button>
         </div>
     </nav>
 

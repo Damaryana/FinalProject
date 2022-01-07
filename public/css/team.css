@@ -15,8 +15,8 @@
     animation: 1s ease-in 0s 1 slideTop;
 }
 
-.name{
-    font-weight: bold;
+span{
+    display: block;
 }
 
 @keyframes slideTop {
@@ -33,13 +33,13 @@
 @media screen and (min-width: 720px) {
     .bio{
         margin: 5vh 5vh;
-        width: 30vh;
+        width: 50vh;
         height: fit-content;
     }
 
     .bio img{
-        width: 30vh;
-        height: 30vh;
+        width: 20vh;
+        height: 20vh;
     }
 }
 
