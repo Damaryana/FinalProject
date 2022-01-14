@@ -48,6 +48,7 @@
                         @forelse($p->subPart as $s)
                         <li class="open-instruction" data-value="{{ $s->id }}">{{ $s->name }}</li>
                         @empty
+                        <div>Data Kosong</div>
                         @endforelse
                     </ul>
                 </li>

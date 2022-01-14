@@ -1,4 +1,4 @@
-<div class="page-title text-center mb-3">Team</div>
+<div class="page-title text-center mb-3">Tim Kami</div>
 <div class="row justify-content-center align-items-center">
     @forelse ($team as $t)
         <div class="bio text-center col-4 mb-3">
